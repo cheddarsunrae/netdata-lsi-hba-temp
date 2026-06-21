@@ -1,0 +1,4 @@
+src/plugins.d/lsi_hba_temp.plugin usr/libexec/netdata/plugins.d/
+src/health.d/lsi_hba_temp.conf etc/netdata/health.d/
+README.md usr/share/doc/netdata-lsi-hba-temp/
+LICENSE usr/share/doc/netdata-lsi-hba-temp/

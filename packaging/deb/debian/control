@@ -1,0 +1,13 @@
+Source: netdata-lsi-hba-temp
+Section: admin
+Priority: optional
+Maintainer: Cheddar SunRae <info@cheddar.team>
+Standards-Version: 4.6.2
+Rules-Requires-Root: no
+
+Package: netdata-lsi-hba-temp
+Architecture: all
+Depends: netdata, systemd, bash, grep, coreutils, lsi-hba-temp
+Description: Netdata external plugin for lsi-hba-temp journal output
+ Reads lsi-hba-temp journal/syslog payloads and publishes LSI/Broadcom HBA
+ temperature and state charts to Netdata.

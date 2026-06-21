@@ -1,0 +1,8 @@
+#!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
+set -e
+if getent passwd netdata >/dev/null 2>&1 && getent group systemd-journal >/dev/null 2>&1; then
+    usermod -aG systemd-journal netdata || true
+fi
+systemctl try-restart netdata.service >/dev/null 2>&1 || true
+exit 0

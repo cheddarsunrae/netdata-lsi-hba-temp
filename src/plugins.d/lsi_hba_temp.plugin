@@ -34,11 +34,10 @@ register_temp_dim_if_needed() {
 register_state_dims_if_needed() {
     local dim="$1" label="$2"
     if [[ -z "${SEEN_STATE_DIMS[$dim]+x}" ]]; then
-        echo "CHART lsi_hba_temp.state '' 'LSI/Broadcom HBA State' 'state' 'hba' 'lsi_hba_temp.state' stacked 90001 $UPDATE_EVERY"
-        echo "DIMENSION ${dim}_ok '${label} ok' absolute 1 1"
-        echo "DIMENSION ${dim}_warning '${label} warning' absolute 1 1"
         echo "DIMENSION ${dim}_critical '${label} critical' absolute 1 1"
+        echo "DIMENSION ${dim}_warning '${label} warning' absolute 1 1"
         echo "DIMENSION ${dim}_unknown '${label} unknown' absolute 1 1"
+        echo "DIMENSION ${dim}_ok '${label} ok' absolute 1 1"
         SEEN_STATE_DIMS["$dim"]=1
     fi
 }
